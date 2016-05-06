@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="en" ng-app='MovieFinderApp'>
+        <head>
+            <meta charset="UTF-8">
+            <title>Gulp Demo</title>
+            <!-- bower:css -->
+            <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+            <!-- endbower -->
+
+            <!-- inject:css -->
+            
+            <link rel="stylesheet" href="/app/syles/main.css">
+            
+            <!-- endinject -->
+            <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="/app/syles/main.css">
+        </head>
+
+        <body>
+              
+            <!-- bower:js -->
+            <script src="bower_components/angular/angular.js"></script>
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+            <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+            <script src="bower_components/toastr/toastr.js"></script>
+            <!-- endbower -->
+            <script src="bower_components/bootstrap-paginator-master/src/bootstrap-paginator.js"></script>
+            <div ui-view></div>
+            <!-- inject:js -->
+            <script src="/app/app.js"></script>
+            <script src="/app/movie.controller.js"></script>
+            <script src="/app/movie.detail.controller.js"></script>
+            <script src="/app/movie.service.js"></script>
+            <script src="/app/navbar.directive.js"></script>
+            <!-- endinject -->
+        </body>
+</html>

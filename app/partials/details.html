@@ -1,0 +1,67 @@
+<div class="container">
+	<h3>Details</h3>
+	<a ui-sref="main">Go To Results</a>
+	<div class="panel panel-info ">
+		<div class="panel-heading" id="detailsHeading">
+			<div class="text-left"><h1>{{vm.details.Title}}</h1></div>
+			<div class="text-right">Released: {{vm.details.Released}}</div>
+		</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8">
+						<table class="table table-striped table-resposive">
+							<tbody>
+								<tr>
+									<td>
+										<span><label>Genre:</label> {{vm.details.Genre}},</span>
+										<span><label>Rating:</label> {{vm.details.Rated}},</span>
+										<span><label>Runtime:</label> {{vm.details.Runtime}}</span>  
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span><label>Director:</label> {{vm.details.Director}}</span><br>
+										
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span><label>Writer: </label>{{vm.details.Writer}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td><span><label>Actors:</label> {{vm.details.Actors}}</span></td>
+								</tr>
+								<tr>
+									<td><span><label>Plot:</label> {{vm.details.Plot}}</span></td>
+								</tr>
+								<tr>
+									<td>
+										<span><label>Country:</label> {{vm.details.Country}}</span>
+										<span><label>Language: </label>{{vm.details.Language}}</span>
+										<span><label>Type: </label>{{vm.details.Type}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span><label>Awards:</label> {{vm.details.Awards}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span><label>IMDB Rating:</label> {{vm.details.imdbRating}}, <label># of votes: </label>{{vm.details.imdbVotes}}</span>
+										<span><label>IMDB ID: </label>{{vm.details.imdbID}}</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-4"><img id="poster" src="{{vm.details.Poster}}"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div ui-view></div> -->
