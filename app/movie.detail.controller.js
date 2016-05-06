@@ -5,23 +5,24 @@
         .module('MovieFinderApp')
         .controller('MovieDetailController', MovieDetailController);
 
-    MovieDetailController.$inject = ['$log', '$stateParams', 'MovieFinderFactory'];
+    MovieDetailController.$inject = ['$log', '$state', 'MovieFinderFactory'];
 
     /* @ngInject */
-    function MovieDetailController($log, $stateParams, MovieFinderFactory) {
+    function MovieDetailController($log, $state, MovieFinderFactory) {
         var vm = this;
         vm.title = 'MovieDetailController';
         vm.details = {};
-
-        console.log($stateParams);
         
-        MovieFinderFactory.specificSearch($stateParams.movieID)
+        MovieFinderFactory.specificSearch($state.params.movieId)
             .then(function(response) {
                 vm.details = response.data;
-                console.log(vm.details);
             }),function(error) {
                 $log.error('failure getting data', error);
-                }             
+            };
+
+        vm.goBack = function() {
+            $state.go('main', $state.params);
+        };             
     }
     
 

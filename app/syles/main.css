@@ -12,9 +12,15 @@ img {
 }
 
 .panel-heading {
-	max-height: 40px;
+	height: 50px;
 }
 
 #detailsHeading {
 	max-height: 120px;
 }
+
+.search {
+	height: 475px;
+}
+
+.pagination>li>button, .pagination>li>span { border-radius: 50% !important; margin: 5px 5px;}

@@ -17,8 +17,6 @@
             return service;
 
             function generalSearch(movie, id) {
-                console.log(movie + " " + id);
-
                 var defer = $q.defer();
 
                 $http({
@@ -34,7 +32,6 @@
                         function(response) {
                             if (typeof response.data === 'object') {
                                 defer.resolve(response);
-                                console.log(response);
                                 toastr.success("Search Information for " + movie);
                             } else {
                                 defer.reject(response);
@@ -47,7 +44,6 @@
                             toastr.error('error: ' + error.data + '<br/>status: ' + error.statusText);
                         });
                     return defer.promise;
-                    console.log(reponse);
 
             };
 
