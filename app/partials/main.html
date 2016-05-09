@@ -1,0 +1,51 @@
+  <div class="container">
+    <div class="jumbotron" > <h1>Movie Nerd</h1></div>
+</div>
+
+
+<div class="container" id="top">
+    <form class="navbar-form navbar-left" role="search">
+        <div class="input-group text-center">
+            <input type="text" class="form-control" placeholder="Movie Title" ng-model="vm.searchTitle">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit" ng-click="vm.searchMovie(vm.searchTitle)">Search</button>
+            </span>
+        </div>
+    </form>
+</div>
+<hr/>
+
+<div class="container">
+    <h3 ng-hide="!vm.totalResults">Total Results : {{vm.totalResults}}</h3>
+    <div class="row">
+        <div class="col-md-3 .search" ng-repeat="movie in vm.movies">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">{{movie.Title}}</div>
+                <div class="panel-body">
+                    Filmed in {{movie.Year}}
+                    <img ng-if="movie.Poster !== 'N/A'" class="photo" ng-src="{{movie.Poster}}">
+                    <img ng-if="movie.Poster === 'N/A'" class="img-responsive" src="app/film.jpg">
+                </div>
+                <div class="panel-footer">
+                    <button type="button" ng-click="vm.goToProjectDetail(movie.imdbID)">View Details</button>                   
+                    <!-- <a ui-sref="details({movieID: movie.imdbID})">View Details</a> -->
+                </div>
+            </div>   
+        </div>
+    </div>
+    
+    <ul class="pagination" ng-hide="!vm.totalResults">
+        <!-- <li class="disabled"><a href="#">«</a></li> -->
+        <li><button ng-click="vm.searchMovie(vm.pageRefTitle, 1)"><<</button></li>
+        <li><button ng-click="vm.searchMovie(vm.pageRefTitle, vm.currentPage -1)"><</button></li>
+        <li ng-repeat="page in vm.totalPages | limitTo: 10 : vm.currentPage">
+            <button ng-click="vm.searchMovie(vm.pageRefTitle, page)">{{page}}</button>
+        </li> 
+        <li><button ng-click="vm.searchMovie(vm.pageRefTitle, vm.currentPage + 1)"> > </button></li>    
+        <li><button ng-click="vm.searchMovie(vm.pageRefTitle, vm.totalPages.length)"> >> </button></li>
+        <label >Page: {{vm.currentPage}} / {{vm.totalPages.length}} </label>
+        <!-- <li><a href="#">»</a></li> -->
+    </ul>
+</div>
+
+

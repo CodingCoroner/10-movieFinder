@@ -1,0 +1,23 @@
+{
+  "name": "10-movieFinder",
+  "homepage": "https://github.com/JiMinJun/10-movieFinder",
+  "authors": [
+    "Ji Min (Gloria) Jun and Nick Casey"
+  ],
+  "description": "Single Page Movie Finder_Origin assignment 10",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.2.18",
+    "toastr": "^2.1.2"
+  }
+}
